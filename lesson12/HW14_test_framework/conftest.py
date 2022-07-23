@@ -13,7 +13,7 @@ logger = logger.getLogger()
 @pytest.fixture(scope="module")
 def start_driver():
     logger.info("Start of fixture create_driver")
-    driver = DriverFactory.create_driver(driver_id=int(ReadConfig.get_driver_id()), is_headless=False)
+    driver = DriverFactory.create_driver(driver_id=int(ReadConfig.get_driver_id()), is_headless=True)
     driver.get(ReadConfig.get_application_url())
     driver.maximize_window()
     yield driver
