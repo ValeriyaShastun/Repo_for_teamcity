@@ -21,6 +21,7 @@ class DriverFactory:
             chrome_options = Options()
             if is_headless:
                 chrome_options.add_argument("--headless")
+                chrome_options.add_argument("--no-sandbox")
             driver = webdriver.Chrome(service=ServiceChrome(ChromeDriverManager().install()), options=chrome_options)
         elif DriverFactory.CHROMIUM == driver_id:
             driver = webdriver.Chrome(
